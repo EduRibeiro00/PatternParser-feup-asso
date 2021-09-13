@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  reader:
+    build: ./app
+    container_name: reader
+    command: npm run start
+    depends_on:
+        - postgres
+    volumes:
+      - /usr/src/app/node_modules
+    env_file:
+      - ./app/.env.prod
+  
+volumes:
+  postgres:
+        

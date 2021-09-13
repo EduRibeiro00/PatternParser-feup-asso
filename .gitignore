@@ -1,0 +1,17 @@
+venv3
+__pycache__
+node_modules
+
+invite-authors/src/email/credentials.json
+.idea/
+
+03/api/backend/venv/
+
+related-patterns/.vscode/
+
+related-patterns/message_service/database_subject.pyc
+
+related-patterns/message_service/queue_observer.pyc
+
+postgres-data/
+.vscode

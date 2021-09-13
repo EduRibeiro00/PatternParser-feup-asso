@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:12.0-alpine
+    container_name: postgres
+    restart: always
+    env_file:
+      - ./postgres/.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  reader:
+    build: ./app
+    container_name: reader
+    command: npm run dev
+    volumes:
+      - ./app/:/usr/src/app
+      - ./app/node_modules/:/usr/src/app/node_modules
+    depends_on:
+        - postgres
+    env_file:
+      - ./app/.env
+  
+volumes:
+  postgres:
+        

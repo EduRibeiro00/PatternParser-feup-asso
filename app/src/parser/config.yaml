@@ -1,0 +1,11 @@
+downloading_strat: wget
+types:
+    plop:
+        url_regex: https:\/\/hillside.net\/plop\/\d{4}\/papers\/proceedings\/papers\/.+.pdf
+        parser:
+            type: plain_text
+            title_strat: plop
+            author_strat: paragraph
+            abstract_strat: plop
+            pattern_strat: state_machine
+            footer_strat: plop
